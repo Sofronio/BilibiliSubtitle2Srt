@@ -89,6 +89,7 @@ namespace BilibiliSubtitle2SRT
 
         private string SecondToTime(string s)
         {
+            s = s.Replace(".", ","); //change decimal separator for windows regional settings  
             TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(s));
             string result = string.Format("{0:D2}:{1:D2}:{2:D2},{3:D3}",
                                     t.Hours,
