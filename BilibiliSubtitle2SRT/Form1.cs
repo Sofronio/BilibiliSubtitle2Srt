@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BilibiliSubtitle2SRT
@@ -89,7 +85,7 @@ namespace BilibiliSubtitle2SRT
 
         private string SecondToTime(string s)
         {
-            TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(s));
+            TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(s, NumberFormatInfo.InvariantInfo));
             string result = string.Format("{0:D2}:{1:D2}:{2:D2},{3:D3}",
                                     t.Hours,
                                     t.Minutes,
